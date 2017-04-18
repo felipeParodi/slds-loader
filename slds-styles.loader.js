@@ -78,16 +78,12 @@ var components = {
 
   // Card
   "cards": [
-    "cards/index",
-    "cards/flavors/base-compact/index"
+    "cards/index"
   ],
 
   // Tables
   "data-tables": [
     "data-tables/index",
-    "data-tables/flavors/advanced/index",
-    "data-tables/flavors/basic/index",
-    "data-tables/flavors/compact/index",
     "data-tables/flavors/fixed-header/index",
     "data-tables/flavors/inline-edit/index",
     "data-tables/flavors/responsive/index"
@@ -102,9 +98,7 @@ var components = {
   // Docked Composer
   "docked-composer": [
     "docked-composer/index",
-    "docked-composer/flavors/email/index",
-    "docked-composer/flavors/note/index",
-    "docked-composer/flavors/task/index"
+    "docked-composer/flavors/email/index"
   ],
 
   //Docked Utility Bar
@@ -147,7 +141,8 @@ var components = {
 
   //Global Header
   "global-header": [
-    "global-header/flavors/base/index"
+    "global-header/flavors/base/index",
+    "global-header/flavors/notifications/index"
   ],
 
   //Global Navigation
@@ -246,11 +241,9 @@ var components = {
   // Spinners
   "spinners": [
     "spinners/index",
-    "spinners/flavors/brand-small/index",
-    "spinners/flavors/inverse-small/index",
-    "spinners/flavors/large/index",
-    "spinners/flavors/medium/index",
-    "spinners/flavors/small/index"
+    "spinners/flavors/sizes/index",
+    "spinners/flavors/colors/index"
+
   ],
 
   // Tabs
@@ -296,7 +289,7 @@ module.exports = function (content) {
     + "@import             \"~@salesforce-ux/design-system/scss/dependencies/index\";\n"
     + "@import             \"~@salesforce-ux/design-system/scss/core/font\";\n"
     + "@import             \"~@salesforce-ux/design-system/scss/vendor/normalize\";\n"
-    + "@import             \"~@salesforce-ux/design-system/scss/core/core\";\n";
+    + "@include core($scoped: false, $globals: true);\n";
 
   //custom styles
   if (config.sldsCustomizations) {
